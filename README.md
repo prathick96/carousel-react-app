@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Sample Carousel React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) for implementing Carousel with images in React from JSON.
 
 ## Available Scripts
 
