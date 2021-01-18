@@ -1,12 +1,21 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Carousel, Image } from "react-bootstrap";
-import ImageFeed from "./imageFeed";
 
 const CarouselDemo = () => {
-    const imgFeed = ImageFeed;
+  const [imageFeed] = useState([])
+
+  useEffect(() => {
+    fetch('/data/'+imageFeed+'.json',{mode: 'no-cors'})
+    .then(res=>res.json())
+    .then(data=> console.log(data))
+    .then(err=> console.error(err))
+  }, [imageFeed])
+
+  console.log(imageFeed)
+
   return (
     <Carousel className='bg-dark'>
-    {imgFeed.map((image) => (
+    {imageFeed.map((image) => (
       <Carousel.Item key={image._id}>
         <Image src={image.imgSrc} alt={image.imgName} fluid />
       </Carousel.Item>
